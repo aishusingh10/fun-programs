@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class GFG {
+    
+     
+public static void main(String[] args){
+    
+    
+String text = "KUUNUKKKKKKUKKKKKUKKKKKGKHUHDJKDDKKKUKKKKUHKKJF";
+String input = "KKKUKKK";
+int counter = 0;
+
+for(int i=0;i<text.length();i++){
+    if(text.charAt(i) == input.charAt(0)){
+        int k=i;
+        int f=0;
+        for(int j=0;j<input.length();j++){
+            if(text.charAt(k)==input.charAt(j)){
+                k++;
+                f=j;
+            } else {
+                break;
+            }
+        }
+        if(f==input.length()-1){
+         counter++;
+         i=i+f;
+        }
+    } else {
+        continue;
+    }
+}
+
+if(counter > 0) {
+   System.out.println("no of times input is present: " + counter);
+ } else {
+   System.out.println("the input is not present");
+  }
+}
+}
